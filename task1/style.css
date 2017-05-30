@@ -22,6 +22,7 @@ ul {
 }
 
 ul > li {
+  position: relative;
   list-style-type: none;
   padding: 20px;
   float: left;
@@ -30,12 +31,79 @@ ul > li {
 }
 
 ul > li img {
+  width: 70%;
   margin: 0 auto;
   display: block;
+  transition: all 1s;
 }
 
 .clearfix {
   clear: both;
 }
 
-/* Вашият CSS от тук надолу */
+@media ( max-width:399px ) {
+  ul > li  {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+
+@media ( min-width:400px ) and ( max-width:599px)  {
+  ul > li  {
+    width: 50%;
+  }
+
+}
+
+@media ( min-width:599px ) and ( max-width:999px)  {
+  ul > li  {
+    width: 33%;
+  }
+
+}
+
+@media ( min-width:1000px ) {
+  ul > li  {
+    display: inline-block;
+  }
+
+}
+
+ul > li:nth-child(even) {
+  background-color: lightblue;
+}
+
+ul > li:hover {
+  background-color: lightblue;
+}
+ul > li  img:hover {
+  transform: rotate(180deg);
+}
+
+ul > li::after {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left:0;
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+ul > li::before {
+  text-shadow: 2px 1px #01010b;
+  color: #c9dcdb;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left:0;
+  position: absolute;
+  font-size: 1.5em;
+  content: "IMAGINE THAT!";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
